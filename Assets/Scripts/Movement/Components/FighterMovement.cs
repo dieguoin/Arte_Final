@@ -8,7 +8,9 @@ namespace Movement.Components
     public sealed class FighterMovement : MonoBehaviour, IMoveableReceiver, IJumperReceiver, IFighterReceiver
     {
         public float speed = 1.0f;
-        public float jumpAmount = 1.0f;
+        public float airSpeed = 0.2f;
+        public float jumpForce = 1.0f;
+        public float downForce = 2.0f;
 
         private Rigidbody2D _rigidbody2D;
         private Animator _animator;
@@ -53,15 +55,20 @@ namespace Movement.Components
 
         void Update()
         {
-            //_grounded = Physics2D.OverlapCircle(_feet.position, 0.1f, _floor);
-            _animator.SetFloat(AnimatorSpeed, this._direction);
-            _animator.SetFloat(AnimatorVSpeed, this._rigidbody2D.velocity.y);
-            _animator.SetBool(AnimatorGrounded, this._grounded);
+            _grounded = Physics2D.OverlapCircle(_feet.position, 0.1f, _floor);
+            //_animator.SetFloat(AnimatorSpeed, this._direction);
+            //_animator.SetFloat(AnimatorVSpeed, this._rigidbody2D.velocity.y);
+            //_animator.SetBool(AnimatorGrounded, this._grounded);
             
         }
         private void FixedUpdate()
         {
-            transform.position += new Vector3(speed * _direction, transform.position.y, transform.position.z);
+            transform.position += new Vector3(((_grounded)?speed  : airSpeed)* _direction, 0, 0);
+            if(!_grounded && _rigidbody2D.velocity.y < .3f && _rigidbody2D.velocity.y > 0)
+            {
+                Debug.Log("add force");
+                _rigidbody2D.AddForce(-Vector2.up * downForce, ForceMode2D.Impulse);
+            }
         }
 
         public void Move(IMoveableReceiver.Direction direction)
@@ -73,7 +80,20 @@ namespace Movement.Components
         ////////////Jump
         public void Jump(IJumperReceiver.JumpStage stage)
         {
-            //_rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            if (!_grounded)
+            {
+                if(stage == IJumperReceiver.JumpStage.Landing && _rigidbody2D.velocity.y > 0)
+                {
+                    _rigidbody2D.velocity = Vector3.zero;
+                    _rigidbody2D.angularVelocity = 0;
+                }
+                return;
+            }
+            if(stage == IJumperReceiver.JumpStage.Jumping)
+            {
+                _rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+
         }
         ////////////////
 

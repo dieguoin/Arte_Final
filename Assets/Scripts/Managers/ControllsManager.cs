@@ -48,6 +48,7 @@ public class ControllsManager : MonoBehaviour
 
         jump= inputActions.FindAction(movementMap + "/Jump");
         jump.performed += OnJump;
+        jump.canceled += OnJump;
         jump.Enable();
 
         lightAttack = inputActions.FindAction(movementMap + "/LightAttack");
