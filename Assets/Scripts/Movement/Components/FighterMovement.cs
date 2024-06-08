@@ -26,13 +26,12 @@ namespace Movement.Components
 
         private float invulneravilityTime = 1;
         
-        private static readonly int AnimatorSpeed = Animator.StringToHash("speed");
-        private static readonly int AnimatorVSpeed = Animator.StringToHash("vspeed");
-        private static readonly int AnimatorGrounded = Animator.StringToHash("grounded");
-        private static readonly int AnimatorAttack1 = Animator.StringToHash("attack1");
-        private static readonly int AnimatorAttack2 = Animator.StringToHash("attack2");
-        private static readonly int AnimatorHit = Animator.StringToHash("hit");
-        private static readonly int AnimatorDie = Animator.StringToHash("die");
+        //private static readonly int AnimatorVSpeed = Animator.StringToHash("vspeed");
+        //private static readonly int AnimatorGrounded = Animator.StringToHash("grounded");
+        //private static readonly int AnimatorAttack1 = Animator.StringToHash("attack1");
+        //private static readonly int AnimatorAttack2 = Animator.StringToHash("attack2");
+        //private static readonly int AnimatorHit = Animator.StringToHash("hit");
+        //private static readonly int AnimatorDie = Animator.StringToHash("die");
 
         private void Awake()
         {
@@ -56,7 +55,7 @@ namespace Movement.Components
         void Update()
         {
             _grounded = Physics2D.OverlapCircle(_feet.position, 0.1f, _floor);
-            //_animator.SetFloat(AnimatorSpeed, this._direction);
+            _animator.SetInteger("speed", _direction);
             //_animator.SetFloat(AnimatorVSpeed, this._rigidbody2D.velocity.y);
             //_animator.SetBool(AnimatorGrounded, this._grounded);
             
@@ -75,7 +74,8 @@ namespace Movement.Components
         {
             _direction = (direction == IMoveableReceiver.Direction.None)? 0 : (direction == IMoveableReceiver.Direction.Left)? -1 : 1;
             bool lookingRight = _direction == 1;
-            transform.localScale = new Vector3(lookingRight ? 1 : -1, 1, 1);
+            bool lookingLeft = _direction == -1;
+            transform.localScale = new Vector3(lookingRight ? 1 : (lookingLeft)?-1 : transform.localScale.x, 1, 1);
         }
         ////////////Jump
         public void Jump(IJumperReceiver.JumpStage stage)
