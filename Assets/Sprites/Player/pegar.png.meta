@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2331eb0c6494765499d3ece832dbe482
+guid: 1f8115f77541ed147a0fd0dadff162c6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,337 +123,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_0
+      name: pegar_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1130.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 800
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.32758632, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d737317db796e5f4e90cab7d8965d53c
-      internalID: 445300940
+      spriteID: 44d4a6cfc4587d94483d46cdd82cbf1d
+      internalID: 1411136033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_1
+      name: pegar_1
       rect:
         serializedVersion: 2
-        x: 250
-        y: 1130.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 800
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.6115619, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ab4ea1afe4fa9640b30beac5c4f722d
-      internalID: 1181433938
+      spriteID: 1de6acac429474445aa6791b2f81915e
+      internalID: 2039386674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_2
+      name: pegar_2
       rect:
         serializedVersion: 2
-        x: 500
-        y: 1130.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 818
+        y: 800
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.6015271, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7a1d69e7c170394ca345ef9304190ca
-      internalID: -1228719292
+      spriteID: fbdefc2690d74ff4b8111033dec6c8bf
+      internalID: -1072602296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_3
+      name: pegar_3
       rect:
         serializedVersion: 2
-        x: 750
-        y: 1130.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1217
+        y: 800
+        width: 382
+        height: 400
+      alignment: 9
+      pivot: {x: 0.5456598, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76364df3172f9c644895e4a9c99a6a00
-      internalID: -178835822
+      spriteID: b553e15195cb1504dbf1e1cfd43d2ed8
+      internalID: 335103834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 754.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7f326385c9e8fe4a84b68df35e54e66
-      internalID: 1839245370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_5
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 754.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf186ce1dcfd0cf4cb5a5e82c67849b5
-      internalID: 1861155090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_6
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 754.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02f012900ee999b4296c764ddccbd7b9
-      internalID: -321990553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_7
-      rect:
-        serializedVersion: 2
-        x: 750
-        y: 754.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 375d707d3051db943847f45751cc598c
-      internalID: 254424206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_8
+      name: pegar_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 378.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 400
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.6419879, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 513c4529a756fcd46b34b48c59b336ad
-      internalID: 1551567376
+      spriteID: 9ea8a01e9fa0beb4eb12a3aa0d47d997
+      internalID: -243722806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_9
+      name: pegar_5
       rect:
         serializedVersion: 2
-        x: 250
-        y: 378.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 401
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.28701827, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37906b315bb1e2746afe95ab715f81af
-      internalID: -1388518597
+      spriteID: 64fe86cc455b1a4418c6463da023c5a9
+      internalID: 1458330109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_10
+      name: pegar_6
       rect:
         serializedVersion: 2
-        x: 500
-        y: 378.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 800
+        y: 400
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.209263, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c84f01a0fe868ae47973cbc46ad65802
-      internalID: -105470746
+      spriteID: d0debbf0937aedb48843c59eb26b5e8b
+      internalID: -2120542125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_11
+      name: pegar_7
       rect:
         serializedVersion: 2
-        x: 750
-        y: 378.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1200
+        y: 400
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.28701782, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 609cdb7109cfcd84fa5dfef9cad74e07
-      internalID: -973514247
+      spriteID: a1919637f60750545bdfc4cf79a4740c
+      internalID: 152382635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_12
+      name: pegar_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 2.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 0
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.64874923, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d615ade41688ee044b88d726e95dac54
-      internalID: 257805394
+      spriteID: dbb37b0e944fb9c4694b872328a4d94d
+      internalID: -929370804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_13
+      name: pegar_9
       rect:
         serializedVersion: 2
-        x: 250
-        y: 2.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.3884381, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9b94951e29d81346a7e51cfb35ada4a
-      internalID: 1596797704
+      spriteID: 8f2f61d86936bd8419be2efada7eb159
+      internalID: -1748013354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_14
+      name: pegar_10
       rect:
         serializedVersion: 2
-        x: 500
-        y: 2.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 800
+        y: 0
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.48647735, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0790aac25f531e46838405ff8ad795f
-      internalID: 1381292177
+      spriteID: 260033b0fcfa9e94dbdebf2c5ade9724
+      internalID: 2100992441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_GOLPEAR_15
+      name: pegar_11
       rect:
         serializedVersion: 2
-        x: 750
-        y: 2.25
-        width: 250
-        height: 376.75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1200
+        y: 0
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.4729544, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a408fd85de2f2042bf981544db9a93f
-      internalID: 1653175926
+      spriteID: 651360184026afe4ca9c50ff09f5802a
+      internalID: -1085061706
       vertices: []
       indices: 
       edges: []
@@ -469,23 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MC_ANIMACION_GOLPEAR_0: 445300940
-      MC_ANIMACION_GOLPEAR_1: 1181433938
-      MC_ANIMACION_GOLPEAR_10: -105470746
-      MC_ANIMACION_GOLPEAR_11: -973514247
-      MC_ANIMACION_GOLPEAR_12: 257805394
-      MC_ANIMACION_GOLPEAR_13: 1596797704
-      MC_ANIMACION_GOLPEAR_14: 1381292177
-      MC_ANIMACION_GOLPEAR_15: 1653175926
-      MC_ANIMACION_GOLPEAR_16: 225761412
-      MC_ANIMACION_GOLPEAR_2: -1228719292
-      MC_ANIMACION_GOLPEAR_3: -178835822
-      MC_ANIMACION_GOLPEAR_4: 1839245370
-      MC_ANIMACION_GOLPEAR_5: 1861155090
-      MC_ANIMACION_GOLPEAR_6: -321990553
-      MC_ANIMACION_GOLPEAR_7: 254424206
-      MC_ANIMACION_GOLPEAR_8: 1551567376
-      MC_ANIMACION_GOLPEAR_9: -1388518597
+      pegar_0: 1411136033
+      pegar_1: 2039386674
+      pegar_10: 2100992441
+      pegar_11: -1085061706
+      pegar_2: -1072602296
+      pegar_3: 335103834
+      pegar_4: -243722806
+      pegar_5: 1458330109
+      pegar_6: -2120542125
+      pegar_7: 152382635
+      pegar_8: -929370804
+      pegar_9: -1748013354
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

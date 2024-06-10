@@ -56,7 +56,7 @@ namespace Movement.Components
         {
             _grounded = Physics2D.OverlapCircle(_feet.position, 0.1f, _floor);
             _animator.SetInteger("speed", _direction);
-            //_animator.SetFloat(AnimatorVSpeed, this._rigidbody2D.velocity.y);
+            
             //_animator.SetBool(AnimatorGrounded, this._grounded);
             
         }

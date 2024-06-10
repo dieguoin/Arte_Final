@@ -126,12 +126,12 @@ TextureImporter:
       name: MC_ANIMACION_ANDAR_0
       rect:
         serializedVersion: 2
-        x: 44
+        x: 70
         y: 667
-        width: 237
-        height: 333
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 188
+        height: 315
+      alignment: 9
+      pivot: {x: 0.44909644, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: MC_ANIMACION_ANDAR_1
       rect:
         serializedVersion: 2
-        x: 281
+        x: 318
         y: 667
-        width: 237
-        height: 333
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 181
+        height: 318
+      alignment: 9
+      pivot: {x: 0.4393147, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: MC_ANIMACION_ANDAR_2
       rect:
         serializedVersion: 2
-        x: 518
+        x: 538
         y: 667
-        width: 237
-        height: 333
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 192
+        height: 325
+      alignment: 9
+      pivot: {x: 0.41221556, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: MC_ANIMACION_ANDAR_3
       rect:
         serializedVersion: 2
-        x: 755
+        x: 770
         y: 667
-        width: 237
-        height: 333
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 182
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5054435, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: MC_ANIMACION_ANDAR_4
       rect:
         serializedVersion: 2
-        x: 44
-        y: 334
-        width: 237
-        height: 333
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 66
+        y: 338
+        width: 176
+        height: 316
+      alignment: 9
+      pivot: {x: 0.47761127, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -228,36 +228,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_ANIMACION_ANDAR_5
-      rect:
-        serializedVersion: 2
-        x: 281
-        y: 334
-        width: 237
-        height: 333
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a1b3f2a79975a7429d80687810898c9
-      internalID: 1077807374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: MC_ANIMACION_ANDAR_6
       rect:
         serializedVersion: 2
-        x: 518
-        y: 334
-        width: 237
-        height: 333
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 302
+        y: 338
+        width: 175
+        height: 315
+      alignment: 9
+      pivot: {x: 0.48041782, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,12 +252,12 @@ TextureImporter:
       name: MC_ANIMACION_ANDAR_7
       rect:
         serializedVersion: 2
-        x: 755
-        y: 334
-        width: 237
-        height: 333
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 542
+        y: 337
+        width: 173
+        height: 320
+      alignment: 9
+      pivot: {x: 0.48887113, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -294,12 +273,12 @@ TextureImporter:
       name: MC_ANIMACION_ANDAR_8
       rect:
         serializedVersion: 2
-        x: 44
-        y: 1
-        width: 237
-        height: 333
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 775
+        y: 335
+        width: 178
+        height: 321
+      alignment: 9
+      pivot: {x: 0.45091093, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,6 +286,27 @@ TextureImporter:
       bones: []
       spriteID: 1e934bdbeb9faf544b5833d249e542c4
       internalID: -1605901517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_ANIMACION_ANDAR_10
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 0
+        width: 184
+        height: 314
+      alignment: 9
+      pivot: {x: 0.5091797, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88971a6ddd188740be9e6d77e3192fc
+      internalID: 479340633
       vertices: []
       indices: 
       edges: []
@@ -324,6 +324,8 @@ TextureImporter:
     nameFileIdTable:
       MC_ANIMACION_ANDAR_0: 1154878581
       MC_ANIMACION_ANDAR_1: 1687118840
+      MC_ANIMACION_ANDAR_10: 479340633
+      MC_ANIMACION_ANDAR_11: 168926487
       MC_ANIMACION_ANDAR_2: 1441638044
       MC_ANIMACION_ANDAR_3: -1744798762
       MC_ANIMACION_ANDAR_4: 630981122
@@ -331,6 +333,7 @@ TextureImporter:
       MC_ANIMACION_ANDAR_6: 1306237274
       MC_ANIMACION_ANDAR_7: 1087132743
       MC_ANIMACION_ANDAR_8: -1605901517
+      MC_ANIMACION_ANDAR_9: 1149827997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
