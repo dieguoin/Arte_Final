@@ -2,9 +2,13 @@
 {
     public interface IFighterReceiver : IRecevier
     {
-        public void Attack1();
-        public void Attack2();
-        public void TakeHit();
-        public void Die(ulong player);
+        public void Dodge();
+        public void Attack();
+        public void Block();
+        public void CancelBlock();
+        public void AdvancedAttack();
+        public void AdvancedParry();
+        public void AdvancedDodge();
+        public void Heal();
     }
 }

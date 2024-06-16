@@ -1,10 +1,12 @@
 using Movement.Commands;
 using Movement.Components;
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class ControllsManager : MonoBehaviour
+public class ControllsManager : MonoBehaviour, IObserver
 {
     [SerializeField] private FighterMovement _character;
     public FighterMovement Character
@@ -17,72 +19,131 @@ public class ControllsManager : MonoBehaviour
         }
     }
 
+    private enum Actions
+    {
+        Dodge,
+        Stop,
+        WalkLeft,
+        WalkRight,
+        Attack,
+        Block,
+        CancelBlock,
+        AdvancedAttack,
+        AdvancedParry,
+        AdvancedDodge,
+        Heal,
+    }
+
     public InputActionAsset inputActions;
     public string movementMap;
+    private InputAction dodge;
     private InputAction move;
-    private InputAction jump;
-    private InputAction lightAttack;
-    private InputAction heavyAttack;
+    private InputAction attack;
+    private InputAction block;
+    private InputAction advancedAttack;
+    private InputAction advancedParry;
+    private InputAction advancedDodge;
+    private InputAction heal;
 
+    private bool _canDoAction = true;
 
-    private Dictionary<string, ICommand> _commands;
+    private Dictionary<Actions, ICommand> _commands;
 
     public void SetCharacter(FighterMovement character)
     {
-        _commands = new Dictionary<string, ICommand> {
-                { "stop", new StopCommand(character) },
-                { "walk-left", new WalkLeftCommand(character) },
-                { "walk-right", new WalkRightCommand(character) },
-                { "jump", new JumpCommand(character) },
-                { "land", new LandCommand(character) },
-                { "attack1", new Attack1Command(character) },
-                { "attack2", new Attack2Command(character) }
+        _commands = new Dictionary<Actions, ICommand> {
+            { Actions.Dodge, new DodgeCommand(character) },
+            { Actions.Stop, new StopCommand(character) },
+            { Actions.WalkLeft, new WalkLeftCommand(character) },
+            { Actions.WalkRight, new WalkRightCommand(character) },
+            { Actions.Attack, new AttackCommand(character) },
+            { Actions.Block, new BlockCommand(character) },
+            { Actions.CancelBlock, new CancelBlockCommand(character) },
+            { Actions.AdvancedAttack, new AdvancedAttackCommand(character) },
+            { Actions.AdvancedParry, new AdvancedParryCommand(character) },
+            { Actions.AdvancedDodge, new AdvancedDodgeCommand(character) },
+            { Actions.Heal, new HealCommand(character) },
                 //{ "pause", }
             };
 
-        move = inputActions.FindAction(movementMap + "/Mover");
+        character.AddObserver(this);
+
+        dodge = inputActions.FindAction($"{movementMap}/Dodge");
+        dodge.performed += OnDodge;
+        dodge.Enable();
+
+        move = inputActions.FindAction($"{movementMap}/Move");
         move.performed += OnMove;
         move.canceled += OnMove;
         move.Enable();
 
+        attack = inputActions.FindAction($"{movementMap}/Attack");
+        attack.performed += OnAttack;
+        attack.Enable();
 
-        jump= inputActions.FindAction(movementMap + "/Jump");
-        jump.performed += OnJump;
-        jump.canceled += OnJump;
-        jump.Enable();
+        block = inputActions.FindAction($"{movementMap}/Block");
+        block.performed += OnBlock;
+        block.canceled += OnCancelBlock;
+        block.Enable();
 
-        lightAttack = inputActions.FindAction(movementMap + "/LightAttack");
-        lightAttack.performed += context =>
-        {
-            _commands["attack1"].Execute();
-        };
-        lightAttack.Enable();
+        advancedAttack = inputActions.FindAction($"{movementMap}/AdvancedAttack");
+        advancedAttack.performed += OnAdvancedAttack;
+        advancedAttack.Enable();
 
-        heavyAttack = inputActions.FindAction(movementMap + "/HeavyAttack");
-        heavyAttack.performed += context =>
-        {
-            _commands["attack2"].Execute();
-        }; 
-        heavyAttack.Enable();
+        advancedParry = inputActions.FindAction($"{movementMap}/AdvancedParry");
+        advancedParry.performed += OnAdvancedParry;
+        advancedParry.Enable();
+
+        advancedDodge = inputActions.FindAction($"{movementMap}/AdvancedDodge");
+        advancedDodge.performed += OnAdvancedDodge;
+        advancedDodge.Enable();
+
+        heal = inputActions.FindAction($"{movementMap}/Heal");
+        heal.performed += OnHeal;
+        heal.Enable();
+    }
+
+    private void OnHeal(InputAction.CallbackContext context)
+    {
+        if (!_canDoAction) return;
+        _commands[Actions.Heal].Execute();
+    }
+
+    private void OnAdvancedDodge(InputAction.CallbackContext context)
+    {
+        if (!_canDoAction) return;
+        _commands[Actions.AdvancedDodge].Execute();
+    }
+
+    private void OnAdvancedParry(InputAction.CallbackContext context)
+    {
+        if (!_canDoAction) return;
+        _commands[Actions.AdvancedParry].Execute();
+    }
+
+    private void OnAdvancedAttack(InputAction.CallbackContext context)
+    {
+        if (!_canDoAction) return;
+        _commands[Actions.AdvancedAttack].Execute();
     }
 
     public static ControllsManager instance;
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             SetCharacter(Character);
             return;
         }
         Destroy(gameObject);
-        
+
 
     }
 
     private void OnDestroy()
     {
-        if(instance == this)
+        if (instance == this)
         {
             instance = null;
         }
@@ -90,47 +151,49 @@ public class ControllsManager : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (!_canDoAction) return;
         float value = context.ReadValue<float>();
-
-        Debug.Log($"OnMove called {context.action}");
 
         if (value == 0f)
         {
-            _commands["stop"].Execute();
+            _commands[Actions.Stop].Execute();
         }
         else if (value == 1f)
         {
-            _commands["walk-right"].Execute();
+            _commands[Actions.WalkRight].Execute();
         }
         else
         {
-            _commands["walk-left"].Execute();
+            _commands[Actions.WalkLeft].Execute();
         }
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    public void UpdateState()
     {
-        float value = context.ReadValue<float>();
-
-        Debug.Log($"OnJump called {context.ReadValue<float>()}");
-
-        if (value == 0f)
-        {
-            _commands["land"].Execute();
-        }
-        else
-        {
-            _commands["jump"].Execute();
-        }
+        _canDoAction = Character.CanDoAction;
     }
-    private void OnAttack1(InputAction.CallbackContext context)
-    {
-        _commands["attack1"].Execute();
-    }
-    private void OnAttack2(InputAction.CallbackContext context)
-    {
-        _commands["attack2"].Execute();
 
+    public void OnDodge(InputAction.CallbackContext context)
+    {
+        if (!_canDoAction) return;
+        _commands[Actions.Dodge].Execute();
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (!_canDoAction) return;
+        _commands[Actions.Attack].Execute();
+    }
+
+    public void OnBlock(InputAction.CallbackContext context)
+    {
+        if (!_canDoAction) return;
+        _commands[Actions.Block].Execute();
+    }
+
+    public void OnCancelBlock(InputAction.CallbackContext context)
+    {
+        _commands[Actions.CancelBlock].Execute();
     }
 }
 
